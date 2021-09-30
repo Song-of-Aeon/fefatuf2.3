@@ -1,5 +1,5 @@
 function c_generatemap(sprite) {
-	global.map = array_create(sprite_get_width(sprite), array_create(sprite_get_height(sprite), {tiletype: TILES.EMPTY}));
+	global.map = array_create(sprite_get_width(sprite), array_create(sprite_get_height(sprite), {tiletype: TILES.EMPTY, units: array_create(2)}));
 	var i;
 	var j;
 	var bitches = surface_create(sprite_get_width(sprite), sprite_get_height(sprite));

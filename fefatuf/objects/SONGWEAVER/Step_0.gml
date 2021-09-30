@@ -1,1 +1,2 @@
 c_input();
+state();

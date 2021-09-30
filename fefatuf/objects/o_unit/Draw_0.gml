@@ -1,0 +1,1 @@
+draw_sprite(sprite, 0, pos.x*global.tilesize+global.tilesize/2, pos.y*global.tilesize+global.tilesize/2);
