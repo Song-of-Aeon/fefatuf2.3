@@ -5,6 +5,7 @@
     {"id":{"name":"c_moveunit","path":"scripts/c_moveunit/c_moveunit.yy",},"order":10,},
     {"id":{"name":"c_makearmy","path":"scripts/c_makearmy/c_makearmy.yy",},"order":8,},
     {"id":{"name":"st_selecting","path":"scripts/st_selecting/st_selecting.yy",},"order":0,},
+    {"id":{"name":"tile","path":"scripts/tile/tile.yy",},"order":11,},
     {"id":{"name":"c_army1","path":"scripts/c_army1/c_army1.yy",},"order":6,},
     {"id":{"name":"o_mapmanager","path":"objects/o_mapmanager/o_mapmanager.yy",},"order":1,},
     {"id":{"name":"s_notbeta","path":"sprites/s_notbeta/s_notbeta.yy",},"order":2,},
