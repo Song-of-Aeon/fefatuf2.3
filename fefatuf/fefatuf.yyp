@@ -1,6 +1,10 @@
 {
   "resources": [
     {"id":{"name":"o_unit","path":"objects/o_unit/o_unit.yy",},"order":2,},
+    {"id":{"name":"o_enumholder","path":"objects/o_enumholder/o_enumholder.yy",},"order":3,},
+    {"id":{"name":"st_commanding","path":"scripts/st_commanding/st_commanding.yy",},"order":16,},
+    {"id":{"name":"unittypes","path":"scripts/unittypes/unittypes.yy",},"order":13,},
+    {"id":{"name":"obj_deep_copy_test","path":"objects/obj_deep_copy_test/obj_deep_copy_test.yy",},"order":4,},
     {"id":{"name":"log","path":"scripts/log/log.yy",},"order":5,},
     {"id":{"name":"c_moveunit","path":"scripts/c_moveunit/c_moveunit.yy",},"order":10,},
     {"id":{"name":"c_makearmy","path":"scripts/c_makearmy/c_makearmy.yy",},"order":8,},
@@ -8,6 +12,7 @@
     {"id":{"name":"tile","path":"scripts/tile/tile.yy",},"order":11,},
     {"id":{"name":"c_army1","path":"scripts/c_army1/c_army1.yy",},"order":6,},
     {"id":{"name":"o_mapmanager","path":"objects/o_mapmanager/o_mapmanager.yy",},"order":1,},
+    {"id":{"name":"endunit","path":"scripts/endunit/endunit.yy",},"order":17,},
     {"id":{"name":"s_notbeta","path":"sprites/s_notbeta/s_notbeta.yy",},"order":2,},
     {"id":{"name":"c_generatemap","path":"scripts/c_generatemap/c_generatemap.yy",},"order":2,},
     {"id":{"name":"s_hellish","path":"sprites/s_hellish/s_hellish.yy",},"order":1,},
@@ -19,6 +24,9 @@
     {"id":{"name":"c_generatemap2","path":"scripts/c_generatemap2/c_generatemap2.yy",},"order":9,},
     {"id":{"name":"c_input","path":"scripts/c_input/c_input.yy",},"order":1,},
     {"id":{"name":"unit","path":"scripts/unit/unit.yy",},"order":7,},
+    {"id":{"name":"deep_copy","path":"scripts/deep_copy/deep_copy.yy",},"order":14,},
+    {"id":{"name":"deep_copy_test","path":"scripts/deep_copy_test/deep_copy_test.yy",},"order":15,},
+    {"id":{"name":"c_fe4suote","path":"scripts/c_fe4suote/c_fe4suote.yy",},"order":12,},
     {"id":{"name":"SENSOU","path":"rooms/SENSOU/SENSOU.yy",},"order":0,},
   ],
   "Options": [

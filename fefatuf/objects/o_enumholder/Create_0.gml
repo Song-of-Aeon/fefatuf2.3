@@ -1,0 +1,28 @@
+enum CLASS {
+	NULL,
+	HUMAN,
+	MONSTER,
+	DARKNER,
+	FLOWER,
+	
+	SIZE
+}
+
+enum DIVINITY {
+	NULL,
+	DUSK,
+	DAWN,
+	HIDDEN,
+	
+	SIZE
+}
+
+enum AFFINITY {
+	NULL,
+	COLD,
+	SHOCK,
+	HEAT,
+	WAVE,
+	
+	SIZE
+}

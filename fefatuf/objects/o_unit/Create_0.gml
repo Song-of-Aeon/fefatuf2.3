@@ -14,3 +14,6 @@ pos = {
 	x: 0,
 	y: 0,
 }
+
+waiting = false;
+commands = ["Attack", "Talk", "Equip", "Wait"];
