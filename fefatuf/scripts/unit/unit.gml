@@ -1,3 +1,48 @@
+
+
+//on:
+//turnstart
+//attack
+//gethit
+//commandmenu
+//statmod
+
+
+
+
+
+
+enum ARCHETYPE {
+	NULL,
+	SHADOWDRAGON,
+	GAIDEN,
+	MYSTERY,
+	GENEALOGY,
+	THRACIA,
+	BINDINGBLADE,
+	BLAZINGBLADE,
+	SACREDSTONES,
+	PATHOFRADIANCE,
+	RADIANTDAWN,
+	SHADOWDRAGON2,
+	MYSTERY2,
+	AWAKENING,
+	FATES,
+	ECHOES,
+	THREEHOUSES,
+	
+	INTEGRATED
+}
+
+global.archetypedata = [
+	{mechanics: []}
+]
+
+function unit(name_={full: "nanashi muzai", nick: "nanashi", secret: "chara"}, sprite_={idle: s_beta}) constructor {
+	
+}
+
+
 function unit(name_={full: "nanashi muzai", nick: "nanashi", secret: "chara"}, sprite_={idle: s_beta},
 hp_=5, str_=5, mag_=5, skl_=5, spd_=5, lck_=5, def_=5, res_=5, mov_=5,
 lv_=1, con_=0, chm_=0, ath_=0/*,

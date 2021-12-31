@@ -14,8 +14,15 @@ commandeffects[?"wait"] = function() {
 	drawstate = st_selectdraw;
 	endunit();
 }
+commandeffects[?"attack"] = function() {
+	state = st_selecting;
+	drawstate = st_selectdraw;
+	c_attack(selectedunit,);
+}
 menu = {
 	depth_: 0,
 	x: 0,
 	y: 0
 }
+
+menuqueue = ds_list_create();

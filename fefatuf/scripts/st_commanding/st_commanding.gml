@@ -1,7 +1,13 @@
 function st_commanding() {
 	hput = rightp-leftp;
 	vput = downp-upp;
-	menu.y += vput;
+	if menuqueue[|0].horizontal {
+		menu.x += hput;
+	}
+	if menuqueue[|0].vertical {
+		menu.y += vput;
+	}
+	
 	if hput {
 		select = true;
 	}

@@ -14,6 +14,7 @@ function st_selecting() {
 			if abs(xdif) + abs(ydif) <= selectedunit.mov {
 				log(global.map[pos.x][pos.y].units[0]);
 				c_movegrabbedunit(pos.x, pos.y, selectedunit);
+				menugen(global.commandstyle);
 				state = st_commanding;
 				drawstate = st_commanddraw;
 				selectedunit = 0;
