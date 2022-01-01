@@ -13,7 +13,6 @@ function fe14unit(basicunit_, class_, skills_, supports_, statcapmod_, divinity_
 	basicunit_.supports = supports_;
 	basicunit_.statcapmod = statcapmod_;
 	basicunit_.divinity = divinity_;
-	basicunit_.archetype = ARCHETYPE.FATES;
 }
 
 //classes are strings through enum
@@ -22,6 +21,12 @@ enum lol {
 	//five = "five"
 }
 
-enum ARCHETYPE {
-	FATES
-}
+/*
+
+hit 30, 87%
+crit *3, 10%
+astra 15*5, 4%
+
+everything, even wait, is a "skill" (module)
+
+*/

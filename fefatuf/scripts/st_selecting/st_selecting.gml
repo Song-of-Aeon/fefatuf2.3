@@ -15,6 +15,7 @@ function st_selecting() {
 				log(global.map[pos.x][pos.y].units[0]);
 				c_movegrabbedunit(pos.x, pos.y, selectedunit);
 				menugen(global.commandstyle);
+				c_loadcommands();
 				state = st_commanding;
 				drawstate = st_commanddraw;
 				selectedunit = 0;
@@ -35,7 +36,7 @@ function st_selecting() {
 		if selectedunit {
 			selectedunit = 0;
 		} else {
-			c_makeunit(c_army1()[0], pos.x, pos.y);
+			c_makeunit(un_kris, pos.x, pos.y);
 		}
 	}
 }

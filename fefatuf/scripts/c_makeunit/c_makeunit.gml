@@ -1,5 +1,5 @@
 function c_makeunit(unit, x, y) {
-	var stuff = variable_struct_get_names(unit)
+	var stuff = variable_struct_get_names(unit);
 	var omgimstuff = instance_create(x*global.tilesize, y*global.tilesize, o_unit);
 	omgimstuff.pos.x = x;
 	omgimstuff.pos.y = y;
