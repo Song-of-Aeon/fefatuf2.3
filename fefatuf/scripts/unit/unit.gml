@@ -1,11 +1,6 @@
 
 
-//on:
-//turnstart
-//attack
-//gethit
-//commandmenu
-//statmod
+
 
 
 
@@ -38,8 +33,20 @@ global.archetypedata = [
 	{mechanics: []}
 ]
 
-function unit(name_={full: "nanashi muzai", nick: "nanashi", secret: "chara"}, sprite_={idle: s_beta}) constructor {
+function unit(name_={full: "nanashi muzai", nick: "nanashi", secret: "chara"}, sprite_={idle: s_beta}, stats_={}, skills_=[], inventory_=[]) constructor {
+	effstats = {};
+	defstats = {};
+	var bitch = variable_struct_get_names(stats_);
 	
+	var i;
+	for (i=0; i<array_length(bitch); i++) {
+		variable_struct_set(defstats, bitch[i], variable_struct_get(stats_, bitch[i]));
+		variable_struct_set(effstats, bitch[i], 0);
+	}
+	
+	for (i=0; i<array_length(skills_); i++) {
+		
+	}
 }
 
 

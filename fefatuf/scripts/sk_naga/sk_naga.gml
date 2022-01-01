@@ -1,10 +1,10 @@
 skillgen({
 	onattack: function(me=theunit, enemy=youunit) {
-		
+		me.effstats.damage += 5;
 	},
-	name: "luna",
-	description: "skill/2 chance to halve effective enemy defense.",
-	type: SKILLTYPE.SKILL
-}, SKILLS.LUNA);
+	name: "nagablood",
+	description: "extra da,mpage",
+	type: SKILLTYPE.HERITAGE
+}, SKILLS.NAGA);
 
 //
