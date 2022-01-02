@@ -14,12 +14,11 @@ skillgen({
 						if guy.alignment != turn {
 						//selectedunit = permanentunit;
 							guy.hp -= 2;
+							backeffect();
 							state = st_selecting;
 							drawstate = st_selectdraw;
 							endunit(selectedunit);
 							selectedunit = 0;
-							selecteffect = c_pickunit;
-							backeffect = c_returnunit;
 						}
 					}
 				});
