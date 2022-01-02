@@ -5,7 +5,7 @@ function st_commanding() {
 		menu.x += hput;
 	}*/
 	//if menuqueue[|0].vertical {
-		menu.y = clamp(menu.y+vput, 0, array_length(selectedunit.commands));
+		menu.y = clamp(menu.y+vput, 0, array_length(selectedunit.commands)-1);
 	//}
 	
 	if hput {
@@ -16,13 +16,24 @@ function st_commanding() {
 		selectedunit.commands[menu.y].effect();
 		if selectedunit.commands[menu.y].weight = 1 {
 			endunit(selectedunit);
+			state = st_selecting;
+			drawstate = st_selectdraw;
+			selectedunit = 0;
+			var i;
+			for (i=0; i<array_length(army[turn]); i++) {
+				if !army[turn][i].waiting {break} else if i = array_length(army[turn])-1 {endturn(turn)};
+			}
+			
+			//if with_array(army[turn], function() {if !waiting return false}) endturn(turn);
 		}
+	}
+	if back {
+		c_movegrabbedunit(tempx, tempy, selectedunit);
+		tempx = -10;
+		tempy = -10;
 		state = st_selecting;
 		drawstate = st_selectdraw;
 		selectedunit = 0;
-	}
-	if back {
-		
 	}
 }
 

@@ -26,3 +26,11 @@ menu = {
 }
 
 menuqueue = ds_list_create();
+
+tempx = -10;
+tempy = -10;
+
+turn = 0;
+
+army[0] = c_makearmy([un_kris(), new unit()], [2, 3], [1, 1], 0);
+army[1] = c_makearmy([un_kris(), new unit()], [10, 11], [10, 10], 1);

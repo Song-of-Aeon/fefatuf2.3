@@ -14,6 +14,7 @@ function st_selecting() {
 			if abs(xdif) + abs(ydif) <= selectedunit.mov {
 				//log(global.map[pos.x][pos.y].units[0]);
 				c_movegrabbedunit(pos.x, pos.y, selectedunit);
+				
 				menugen(global.commandstyle);
 				c_loadcommands(selectedunit);
 				state = st_commanding;
@@ -22,12 +23,17 @@ function st_selecting() {
 			}
 		} else {
 			//log(global.map[pos.x][pos.y].units[0]);
-			if global.map[pos.x][pos.y].units[0] != 0 {
+			var guy = global.map[pos.x][pos.y].units[0]
+			if guy != 0 {
 				//log(global.map[pos.x][pos.y].units[0]);
-				selectedunit = global.map[pos.x][pos.y].units[0];
-				if permanentunit = 0 {
-					permanentunit = selectedunit;
-				}
+				if guy.alignment = turn && !guy.waiting {
+					tempx = pos.x;
+					tempy = pos.y;
+					selectedunit = guy;
+					if permanentunit = 0 {
+						permanentunit = selectedunit;
+					}
+				} else {}
 				//selectedunit = permanentunit;
 			}
 		}
@@ -36,7 +42,8 @@ function st_selecting() {
 		if selectedunit {
 			selectedunit = 0;
 		} else {
-			c_makeunit(un_kris(), pos.x, pos.y);
+			//c_makeunit(un_kris(), pos.x, pos.y);
+			
 		}
 	}
 }

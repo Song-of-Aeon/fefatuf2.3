@@ -25,8 +25,8 @@
   "creationCodeFile": "",
   "inheritCode": false,
   "instanceCreationOrder": [
-    {"name":"inst_6D6DFE28","path":"rooms/SENSOU/SENSOU.yy",},
     {"name":"inst_55255223","path":"rooms/SENSOU/SENSOU.yy",},
+    {"name":"inst_6D6DFE28","path":"rooms/SENSOU/SENSOU.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,
