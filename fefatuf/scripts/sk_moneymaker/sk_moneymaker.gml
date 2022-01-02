@@ -1,9 +1,16 @@
+global.x_skillmanager = { //yeah i totally just stole this from market bread man im sorry
+	ReferenceSkillList: array_create(SKILLS.SIZE),
+	BindSkill: function(skill, index) {
+		ReferenceSkillList[index] = skill;
+	},
+}
+
 skillgen({
 	onstats: function(me=theunit, enemy=youunit) {
-		me.effspd += 999;
+		me.effstats.spd += 999;
 	},
-	name: "luna",
-	description: "skill/2 chance to halve effective enemy defense.",
+	name: "moneymaker",
+	description: "undefeatable?????",
 	type: SKILLTYPE.PERSONAL
 }, SKILLS.MONEYMAKER);
 

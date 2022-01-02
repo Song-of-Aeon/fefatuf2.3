@@ -1,19 +1,25 @@
 function st_commanding() {
 	hput = rightp-leftp;
 	vput = downp-upp;
-	if menuqueue[|0].horizontal {
+	/*if menuqueue[|0].horizontal {
 		menu.x += hput;
-	}
-	if menuqueue[|0].vertical {
-		menu.y += vput;
-	}
+	}*/
+	//if menuqueue[|0].vertical {
+		menu.y = clamp(menu.y+vput, 0, array_length(selectedunit.commands));
+	//}
 	
 	if hput {
 		select = true;
 	}
 	
 	if select {
-		selectedunit.commands[menu.y]();
+		selectedunit.commands[menu.y].effect();
+		if selectedunit.commands[menu.y].weight = 1 {
+			endunit(selectedunit);
+		}
+		state = st_selecting;
+		drawstate = st_selectdraw;
+		selectedunit = 0;
 	}
 	if back {
 		

@@ -1,12 +1,7 @@
 function c_addskill(target, skill) {
 	with target {
 		skill = clamp(skill, 0, SKILLS.SIZE);
-		ds_list_add(myitems, item);
-		//itemmemory[ds_list_size(myitems)+1] = {count:0, val1:0, val2:0};
-		var doing = c_getitembyid(item);
-		if variable_struct_exists(doing, "onpickup") {
-			doing.onpickup();
-		}
+		ds_list_add(skills, skill);
 		with target c_skilleval();
 		with target c_stateval();
 	}
@@ -16,7 +11,7 @@ function c_skilleval() {
 	var i;
 	c_resethooks();
 	for (i=0; i<ds_list_size(skills); i++) {
-		var lookingitem = c_getitembyid(skills[|i]);
+		var lookingitem = c_getskillbyid(skills[|i]);
 		//log(lookingitem.name);
 		//log(i);
 		var names = variable_struct_get_names(hooks);
@@ -29,11 +24,12 @@ function c_skilleval() {
 	}
 }
 
-function c_resetstats() {
+function c_stateval() {
 	var defaults = variable_struct_get_names(defstats);
 	for (var i=0; i<array_length(defaults); i++) {
-		variable_instance_set(id, defaults[i], variable_struct_get(defaultstats,defaults[i]));
+		variable_instance_set(self, defaults[i], variable_struct_get(defstats,defaults[i]));
 	}
+	//c_dohook();
 }
 
 function c_resethooks() {

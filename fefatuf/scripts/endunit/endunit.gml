@@ -1,3 +1,3 @@
-function endunit() {
-	selectedunit.waiting = true
+function endunit(target) {
+	target.waiting = true;
 }

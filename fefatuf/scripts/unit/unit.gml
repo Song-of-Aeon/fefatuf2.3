@@ -50,6 +50,14 @@ global.archetypedata = [
 ]
 
 function unit(name_={full: "nanashi muzai", nick: "nanashi", secret: "chara"}, sprite_={idle: s_beta}, stats_={hp: 5, str: 2}, skills_=[SKILLS.WAIT], inventory_=[]) constructor {
+	hooks = {
+		onturnstart: makeEmptyHook(),
+		onattack: makeEmptyHook(),
+		onhit: makeEmptyHook(),
+		commandmenu: makeEmptyHook(),
+		statmod: makeEmptyHook(),
+	}
+	
 	name = name_;
 	sprite = sprite_;
 	
@@ -66,7 +74,7 @@ function unit(name_={full: "nanashi muzai", nick: "nanashi", secret: "chara"}, s
 	
 	skills = ds_list_create();
 	for (i=0; i<array_length(skills_); i++) {
-		c_addskill(id, skills_[i]);
+		c_addskill(self, skills_[i]);
 	}
 	
 	inventory = inventory_;

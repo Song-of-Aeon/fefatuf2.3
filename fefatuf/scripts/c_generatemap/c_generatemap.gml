@@ -10,7 +10,7 @@ function c_generatemap(sprite) {
 			///log(surface_getpixel_ext(bitches,i, j));
 			switch surface_getpixel(bitches, i, j) {
 				case 0:
-					log("yeah")
+					//log("yeah");
 					global.map[i][j].tiletype = TILES.SOLID;
 					break;
 				default:

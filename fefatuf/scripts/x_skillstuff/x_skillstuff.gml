@@ -32,21 +32,21 @@ enum SKILLTYPE {
 
 global.x_skillmanager = { //yeah i totally just stole this from market bread man im sorry
 	ReferenceSkillList: array_create(SKILLS.SIZE),
-	BindSkill: function(item, index) {
-		ReferenceSkillList[index] = item;
+	BindSkill: function(skill, index) {
+		ReferenceSkillList[index] = skill;
 	},
 }
 
 function c_getskillbyid(index) {
-	var skill = global.x_itemmanager.ReferenceSkillList[index];
+	var skill = global.x_skillmanager.ReferenceSkillList[index];
 	if !skill {
 		log("item index " + string(index) + " isnt bound! make sure to bind that shit!"); 
-		return global.x_itemmanager.ReferenceSkillList[SKILLS.NULL];
+		return global.x_skillmanager.ReferenceSkillList[SKILLS.NULL];
 	}
-	return item;
+	return skill;
 }
-function c_getidbyskill(item){
-	for(var i = 0; i < SKILLS.SIZE;i++){
-		if(c_getskillbyid(i) == item) return i;
+function c_getidbyskill(skill) {
+	for (var i=0; i<SKILLS.SIZE; i++) {
+		if(c_getskillbyid(i) == skill) return i;
 	}
 }

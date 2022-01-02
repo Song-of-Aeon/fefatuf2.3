@@ -6,7 +6,7 @@
     "path": "folders/Scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Script34",
+  "name": "c_loadcommands",
   "tags": [],
   "resourceType": "GMScript",
 }

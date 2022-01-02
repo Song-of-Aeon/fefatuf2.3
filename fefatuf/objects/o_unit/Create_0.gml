@@ -1,6 +1,6 @@
 name = "marts"
 sprite = s_beta;
-data = {
+/*data = {
 	name: "marts",
 	sprite: s_beta,
 	hp: 5,
@@ -14,7 +14,8 @@ data = {
 	mov: 5,
 	skills: ds_list_create(),
 	inventory: [],
-}
+}*/
+mov = 3;
 
 //on:
 //turnstart
