@@ -9,11 +9,9 @@ function st_selecting() {
 	if select {
 		//log(string(pos.x) + ", " + string(pos.y) + " is " + string(global.map[pos.x][pos.y].tiletype));
 		if selectedunit && global.map[pos.x][pos.y].tiletype != TILES.SOLID {
-			var xdif = pos.x - selectedunit.pos.x;
-			var ydif = pos.y - selectedunit.pos.y;
-			if abs(xdif) + abs(ydif) <= selectedunit.mov {
+			if array_contains(set, global.map[pos.x][pos.y]) {
 				//log(global.map[pos.x][pos.y].units[0]);
-				c_movegrabbedunit(pos.x, pos.y, selectedunit);
+				c_movegrabbedunit(pos.x, pos.y);
 				
 				menugen(global.commandstyle);
 				c_loadcommands(selectedunit);
@@ -30,6 +28,7 @@ function st_selecting() {
 					tempx = pos.x;
 					tempy = pos.y;
 					selectedunit = guy;
+					set = rangegen(selectedunit.pos.x, selectedunit.pos.y, selectedunit.mov);
 					if permanentunit = 0 {
 						permanentunit = selectedunit;
 					}
@@ -46,24 +45,42 @@ function st_selecting() {
 			
 		}
 	}
+	
 }
 
 function st_selectdraw() {
 	if selectedunit {
 		//log(selectedunit);
 		var i;
-		var j;
-		var range = selectedunit.mov;
-		var myx = (selectedunit.pos.x*global.tilesize);
-		var myy = (selectedunit.pos.y*global.tilesize);
+		//var j;
+		//var range = selectedunit.mov;
+		//var myx = (selectedunit.pos.x*global.tilesize);
+		//var myy = (selectedunit.pos.y*global.tilesize);
+		
 		draw_set_colour(c_aqua);
 		draw_set_alpha(0.3);
-		for (i=-range; i<range+1; i++) {
+		/*for (i=-range; i<range+1; i++) {
 			for (j=-range; j<range+1; j++) {
 				if abs(i) + abs(j) <= range && global.map[clamp(selectedunit.pos.x+i, 0, 64)][clamp(selectedunit.pos.y+j, 0, 64)].tiletype != TILES.SOLID {
 					draw_rectangle(i*global.tilesize+myx, j*global.tilesize+myy, i*global.tilesize+global.tilesize+myx, j*global.tilesize+global.tilesize+myy, false);
 				}
 			}
+		}*/
+		/*for (i=0; i<array_length(global.map); i++) {
+			for (j=0; j<array_length(global.map[i]); j++) {
+				if array_contains(set, global.map[i][j]) {
+					log(i, j);
+					draw_rectangle(i*global.tilesize, j*global.tilesize, i*global.tilesize+global.tilesize, j*global.tilesize+global.tilesize, false);
+				}
+			}
+		}*/
+		for (i=0; i<array_length(set); i++) {
+			draw_rectangle(
+				set[i].x*global.tilesize,
+				set[i].y*global.tilesize,
+				set[i].x*global.tilesize+global.tilesize,
+				set[i].y*global.tilesize+global.tilesize,
+			false);
 		}
 		draw_set_alpha(1);
 		draw_set_colour(c_black);

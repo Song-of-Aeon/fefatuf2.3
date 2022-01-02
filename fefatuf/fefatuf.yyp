@@ -1,10 +1,12 @@
 {
   "resources": [
+    {"id":{"name":"array_contains","path":"scripts/array_contains/array_contains.yy",},"order":30,},
     {"id":{"name":"o_unit","path":"objects/o_unit/o_unit.yy",},"order":2,},
     {"id":{"name":"o_enumholder","path":"objects/o_enumholder/o_enumholder.yy",},"order":3,},
     {"id":{"name":"rng","path":"scripts/rng/rng.yy",},"order":21,},
     {"id":{"name":"commandlist","path":"scripts/commandlist/commandlist.yy",},"order":19,},
     {"id":{"name":"st_commanding","path":"scripts/st_commanding/st_commanding.yy",},"order":16,},
+    {"id":{"name":"rangegen","path":"scripts/rangegen/rangegen.yy",},"order":31,},
     {"id":{"name":"unittypes","path":"scripts/unittypes/unittypes.yy",},"order":13,},
     {"id":{"name":"obj_deep_copy_test","path":"objects/obj_deep_copy_test/obj_deep_copy_test.yy",},"order":4,},
     {"id":{"name":"sk_moneymaker","path":"scripts/sk_moneymaker/sk_moneymaker.yy",},"order":6,},
@@ -20,6 +22,7 @@
     {"id":{"name":"c_army1","path":"scripts/c_army1/c_army1.yy",},"order":6,},
     {"id":{"name":"makeEmptyHook","path":"scripts/makeEmptyHook/makeEmptyHook.yy",},"order":23,},
     {"id":{"name":"sk_luna","path":"scripts/sk_luna/sk_luna.yy",},"order":1,},
+    {"id":{"name":"sk_attack","path":"scripts/sk_attack/sk_attack.yy",},"order":10,},
     {"id":{"name":"o_mapmanager","path":"objects/o_mapmanager/o_mapmanager.yy",},"order":1,},
     {"id":{"name":"loop_range","path":"scripts/loop_range/loop_range.yy",},"order":29,},
     {"id":{"name":"munction","path":"scripts/munction/munction.yy",},"order":28,},

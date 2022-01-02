@@ -14,7 +14,7 @@ var i;
 var j;
 for (i=0; i<64; i++) {
 	for (j=0; j<64; j++) {
-		global.map[i][j] = new tile();
+		global.map[i][j] = new tile(i, j);
 	}
 }
 
