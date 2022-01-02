@@ -7,43 +7,10 @@ function st_selecting() {
 	pos.y = clamp(pos.y, 0, array_length(global.map[pos.x]));
 	
 	if select {
-		//log(string(pos.x) + ", " + string(pos.y) + " is " + string(global.map[pos.x][pos.y].tiletype));
-		if selectedunit && global.map[pos.x][pos.y].tiletype != TILES.SOLID {
-			if array_contains(set, global.map[pos.x][pos.y]) {
-				//log(global.map[pos.x][pos.y].units[0]);
-				c_movegrabbedunit(pos.x, pos.y);
-				
-				menugen(global.commandstyle);
-				c_loadcommands(selectedunit);
-				state = st_commanding;
-				drawstate = st_commanddraw;
-				//selectedunit = 0;
-			}
-		} else {
-			//log(global.map[pos.x][pos.y].units[0]);
-			var guy = global.map[pos.x][pos.y].units[0]
-			if guy != 0 {
-				//log(global.map[pos.x][pos.y].units[0]);
-				if guy.alignment = turn && !guy.waiting {
-					tempx = pos.x;
-					tempy = pos.y;
-					selectedunit = guy;
-					set = rangegen(selectedunit.pos.x, selectedunit.pos.y, selectedunit.mov);
-					if permanentunit = 0 {
-						permanentunit = selectedunit;
-					}
-				} else {}
-				//selectedunit = permanentunit;
-			}
-		}
+		selecteffect();
 	}
 	if back {
-		if selectedunit {
-			selectedunit = 0;
-		} else {
-			//c_makeunit(un_kris(), pos.x, pos.y);
-			
-		}
+		backeffect();
 	}
 	
 }
@@ -85,5 +52,45 @@ function st_selectdraw() {
 		draw_set_alpha(1);
 		draw_set_colour(c_black);
 	
+	}
+}
+
+function c_pickunit() {
+	//log(string(pos.x) + ", " + string(pos.y) + " is " + string(global.map[pos.x][pos.y].tiletype));
+	if selectedunit && global.map[pos.x][pos.y].tiletype != TILES.SOLID {
+		if array_contains(set, global.map[pos.x][pos.y]) {
+			//log(global.map[pos.x][pos.y].units[0]);
+			c_movegrabbedunit(pos.x, pos.y);
+				
+			menugen(global.commandstyle);
+			c_loadcommands(selectedunit);
+			state = st_commanding;
+			drawstate = st_commanddraw;
+			//selectedunit = 0;
+		}
+	} else {
+		//log(global.map[pos.x][pos.y].units[0]);
+		var guy = global.map[pos.x][pos.y].units[0];
+		if guy != 0 {
+			//log(global.map[pos.x][pos.y].units[0]);
+			if guy.alignment = turn && !guy.waiting {
+				tempx = pos.x;
+				tempy = pos.y;
+				selectedunit = guy;
+				set = rangegen(selectedunit.pos.x, selectedunit.pos.y, selectedunit.mov);
+				if permanentunit = 0 {
+					permanentunit = selectedunit;
+				}
+			} else {}
+			//selectedunit = permanentunit;
+		}
+	}
+}
+function c_returnunit() {
+	if selectedunit {
+		selectedunit = 0;
+	} else {
+		//c_makeunit(un_kris(), pos.x, pos.y);
+			
 	}
 }

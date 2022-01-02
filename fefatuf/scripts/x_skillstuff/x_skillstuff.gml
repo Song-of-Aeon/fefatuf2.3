@@ -3,6 +3,7 @@ enum SKILLS {
 	#region mechanics
 	CANTO,
 	WAIT,
+	ATTACK,
 	#endregion
 	#region heritage
 	NAGA,

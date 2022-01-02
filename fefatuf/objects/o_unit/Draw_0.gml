@@ -20,3 +20,5 @@ switch alignment {
 }
 draw_sprite_ext(sprite.idle, 0, pos.x*global.tilesize+global.tilesize/2, pos.y*global.tilesize+global.tilesize/2, 1, 1, 0, col, draw_get_alpha());
 draw_set_alpha(1);
+draw_set_color(c_red);
+draw_text(pos.x*global.tilesize, pos.y*global.tilesize+global.tilesize, hp);

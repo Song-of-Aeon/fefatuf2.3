@@ -33,6 +33,8 @@ tempy = -10;
 turn = 0;
 
 army[0] = c_makearmy([un_kris(), new unit()], [2, 3], [1, 1], 0);
-army[1] = c_makearmy([un_kris(), new unit()], [10, 11], [10, 10], 1);
+army[1] = c_makearmy([un_kris(), new unit()], [5, 6], [1, 1], 1);
 set = [];
 global.count = 0;
+selecteffect = c_pickunit;
+backeffect = c_returnunit;
