@@ -1,9 +1,11 @@
-function c_addskill(target, skill) {
+function c_addskill(target, skill, evaluate=true) {
 	with target {
 		skill = clamp(skill, 0, SKILLS.SIZE);
 		ds_list_add(skills, skill);
-		with target c_skilleval();
-		with target c_stateval();
+		if !evaluate {
+			with target c_skilleval();
+			with target c_stateval();
+		}
 	}
 }
 
@@ -28,6 +30,13 @@ function c_stateval() {
 	var defaults = variable_struct_get_names(defstats);
 	for (var i=0; i<array_length(defaults); i++) {
 		variable_instance_set(self, defaults[i], variable_struct_get(defstats,defaults[i]));
+	}
+	for (var i=0; i<array_length(defaults); i++) {
+		//variable_instance_set(self, defaults[i], defaults[i]+variable_struct_get(effstats,defaults[i])); //please be int please be int please be int
+	}
+	defaults = inventory[0].stats; //heh heh they arent the defaults what a chump
+	for (var i=0; i<array_length(defaults); i++) {
+		//variable_instance_set(self, defaults[i], defaults[i]+variable_struct_get(effstats,defaults[i])); //please be int please be int please be int
 	}
 	//c_dohook();
 }

@@ -61,7 +61,7 @@ function unit(name_={full: "nanashi muzai", nick: "nanashi", secret: "chara"}, s
 	name = name_;
 	sprite = sprite_;
 	
-	stats = stats_
+	stats = stats_;
 	effstats = {};
 	defstats = {};
 	var bitch = variable_struct_get_names(stats);
@@ -70,14 +70,15 @@ function unit(name_={full: "nanashi muzai", nick: "nanashi", secret: "chara"}, s
 	for (i=0; i<array_length(bitch); i++) {
 		variable_struct_set(defstats, bitch[i], variable_struct_get(stats, bitch[i]));
 		variable_struct_set(effstats, bitch[i], 0);
+		variable_struct_set(self, bitch[i], variable_struct_get(stats, bitch[i]));
 	}
-	
+	inventory = inventory_;
 	skills = ds_list_create();
 	for (i=0; i<array_length(skills_); i++) {
 		c_addskill(self, skills_[i]);
 	}
 	
-	inventory = inventory_;
+	
 }
 
 

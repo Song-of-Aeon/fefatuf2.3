@@ -1,5 +1,6 @@
 name = "marts"
 sprite = s_beta;
+//hp = "hp";
 /*data = {
 	name: "marts",
 	sprite: s_beta,

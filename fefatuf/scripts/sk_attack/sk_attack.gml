@@ -13,7 +13,8 @@ skillgen({
 						//log(global.map[pos.x][pos.y].units[0]);
 						if guy.alignment != turn {
 						//selectedunit = permanentunit;
-							guy.hp -= 2;
+							//guy.hp -= 2;
+							c_attack(selectedunit, guy);
 							backeffect();
 							state = st_selecting;
 							drawstate = st_selectdraw;
@@ -31,8 +32,8 @@ skillgen({
 			}
 		}),
 	},
-	name: "wait",
-	description: "...",
+	name: "attack",
+	description: "get shitted",
 	type: SKILLTYPE.MECHANIC
 }, SKILLS.ATTACK);
 
