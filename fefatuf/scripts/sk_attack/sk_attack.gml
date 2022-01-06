@@ -14,7 +14,7 @@ skillgen({
 						if guy.alignment != turn {
 						//selectedunit = permanentunit;
 							//guy.hp -= 2;
-							c_attack(selectedunit, guy);
+							c_combat(selectedunit, guy);
 							backeffect();
 							state = st_selecting;
 							drawstate = st_selectdraw;
